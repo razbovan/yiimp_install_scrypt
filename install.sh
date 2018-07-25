@@ -2,7 +2,7 @@
 ################################################################################
 # Original Author:   crombiecrunch
 # Fork Author: manfromafar
-# Current Author: Xavatar
+# Current Author: Razbovan
 # Web:     
 #
 # Program:
@@ -206,6 +206,7 @@ default         0;
     sudo ufw allow 3633/tcp
     sudo ufw allow 3733/tcp
     sudo ufw allow 3636/tcp
+    sudo ufw allow 3691/tcp
     sudo ufw allow 3737/tcp
     sudo ufw allow 3739/tcp
     sudo ufw allow 3747/tcp
@@ -278,7 +279,7 @@ default         0;
     # Generating Random Password for stratum
     blckntifypass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
     cd ~
-    git clone https://github.com/tpruvot/yiimp.git
+    git clone https://github.com/razbovan/yiimp_install_scrypt.git
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     sudo make
